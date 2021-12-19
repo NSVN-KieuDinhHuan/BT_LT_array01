@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyen tập array 01</title>
+</head>
+<body>
+<script>
+    document.write("Array01=[1,12,3,14,5,6,17,8,9,10]")
+// Bài 1:
+ let arr_01=[1,12,3,14,5,6,17,8,9,10]
+ let count=0
+ for (let i of arr_01) {
+     if(i>=10){
+         count++;
+     }
+ }
+    document.write("<br>")
+ document.write("Bài 1:Số lượng phần tử lớn hơn hoặc bằng 10 là "+count)
+// Bài 2:
+let max=arr_01[0];
+ let index_arr
+for(let i in arr_01) {
+    if (arr_01[i]>max){
+        max=arr_01[i]
+        index_arr=i
+    }
+}
+document.write("<br>")
+document.write("Bài 2:Phẩn tử có giá trị lớn nhất là "+ max + " tại vị trí thứ " +index_arr)
+//Bai 3 in ra giá trị trung bình của các phần tử trong mảng.
+let tong=0
+for (let i of arr_01) {
+  tong=tong+i
+}
+let TB=tong/arr_01.length
+document.write("<br>")
+document.write("Bai 3:giá trị trung bình của các phần tử trong mảng "+TB)
+// Bài 4:Đảo ngược giá trị mảng.
+    let first = 0;
+    let last = arr_01.length - 1;
+    while (first < last) {
+        let b = arr_01[first];
+        arr_01[first] =arr_01[last];
+        arr_01[last] = b;
+        first++;
+        last--;
+    }
+    document.write("<br>")
+    document.write( "Bài 4: Mảng Đảo ngược:" +arr_01);
+    //Bài 5 đêm số nguyên âm trong một chuỗi
+    let arr_02 =[2,-3,-5,8,9,20,33]
+    let count_02=0
+    for (let i of arr_02){
+      if (i<0) {
+          count_02+=1;
+      }
+    }
+    document.write("<br>")
+    document.write("Bài 5: Số nguyên âm trong chuỗi Array02 =[2,-3,-5,8,9,20,33] là "+ count_02)
+    document.write("<br>")
+    //Bài 6
+    let b=parseInt(prompt("Bai 6:nhâp phân tử để tìm kiếm"));
+    let check=false
+    for(let i=0;i< arr_02.length;i++){
+        if (arr_02[i]==b){
+            check=true
+        }
+    }
+    if (check==true) {
+        document.write("Bài 6:phần tử " + b+" is in the Array02")
+
+    }else{
+        document.write("Bài 6: phần tử " + b+" is  not in the Array02")
+    }
+    document.write("<br>")
+//Bài 7
+    let c=prompt("Bai 7:nhâp phân tử để tìm kiếm")
+    let dele=false
+    for(let i=0;i<arr_02.length;i++){
+        if (arr_02[i]==c){
+            dele=true
+            arr_02.splice(i,1)
+            break;
+        }
+    }
+    if (dele===true) {
+        document.write("Bài 7:Mảng Array02 sau khi xoa: "+c+ " là :" + arr_02 )
+    }else{
+        document.write("Bài 7: phần tử " + c+" is  not in the Array02")
+    }
+    //Bài 8
+    arr_01.sort(function (a,b){
+        return a-b;
+    })
+    document.write("<br>")
+    document.write("Bài 8:Mảng Array01 theo thứ tự giảm dần: "+arr_01)
+// bai 9
+   let arr_c= arr_01.concat(arr_02)
+    document.write("<br>")
+    document.write("Bài 9: mảng nối Array01 và Array02 là:" +arr_c)
+</script>
+</body>
+</html>
